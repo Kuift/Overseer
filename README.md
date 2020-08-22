@@ -1,4 +1,7 @@
-# CONTROLS FOR THE OVERSEERS AND THE MODERATORS:
+# OVERSEER MOD FOR THE GAME KING ARTHUR'S GOLD
+This mod consist of picking overseers that instruct their teamates what to built using blueprints.
+The team win if they can manage to build the whole blueprints in time.
+## CONTROLS FOR THE OVERSEERS AND THE MODERATORS:
 - To enter blueprint editing mode, press Left control or Right control
 - To hide blueprints, simply press 'H'
 - When in editing mode, you can left click to add a block, or right click to remove a block
