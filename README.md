@@ -20,7 +20,21 @@ The team win if they can manage to build the whole blueprints in time.
 ##### Thanks to Epsilon for the inventory code
 
 ## TODO:
+### Overseer gamemode:
+- make the builder the only class available
+- make the save system available to everyone even if not overseer
+- make a item that allow you to buy things from the workshop to destroy bedrock and spawn block OR make impossible to put blueprint in those places
+- determine a limit of block that can be placed by the overseer(s) depending on the number of people in the server
+    - once the limit is found, make it so instead of having a time limit, the overseer has a "blueprint block quota" to fill before the next phase begin
+- make the overseer selectable with a voting system
+- make it competitive:
+    - add the red team
+    - make it so that each team can select their own overseer
+    - make it so that when the overseer phase is done, each team must build the blueprints of the opposite overseer
+- make a third phase; make a breaking phase where people of to break their construction; or make a defense phase, where one team defend with the help of their blueprint; or make make a normal CTF start
+
 ### Live editor todo:
+* make a good gui for the editor tool
 * make selection actually select the right area
 * make it possible to rotate 2d sprite larger than 8x8
 * make blob stop attacking when in edit mode
@@ -42,6 +56,7 @@ The team win if they can manage to build the whole blueprints in time.
 - make a voting system on blueprints
 - make chat command to clear all blueprints
 - configurable delay between the placement of blueprint to prevent spam
+- make an addon for existing gamemodes that add a 30 to 60 seconds delay before the beginning of a match to plan blueprints building
 
 ### Overall improvement todo:
 - cleanup code, remove the global variable, make the project oop based
@@ -56,11 +71,5 @@ The team win if they can manage to build the whole blueprints in time.
 - optimise even more blueprint data sharing
     - getLocalPlayer().getNetworkID() == netID this may not work as you think it does : even when netid != localnetid, code is being executed.
 - Wait for engine fix for your save system to completely work -> remind the engine devs about it
-
-### Blueprint promotion todo:
-- Overseer idea
-    - an addon to existing gamemode that add a 30 to 60 seconds delay before the beginning of a match to plan blueprints building
-    - an gamemode in which there is one overseer and the other ppl have to build what the overseer want otherwise they lose
-    - kind of an addon/gamemode where there's one overseer per team that tell the team what to do
 
 ## Code structure
