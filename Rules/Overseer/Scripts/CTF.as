@@ -545,7 +545,6 @@ shared class CTFCore : RulesCore
 		if(value > 0 && value < 50 && triggerWinCheck)
 		{
 			triggerWinCheck = false;
-			print("got in here");
 			CBitStream localparams;
 			getRules().SendCommand(getRules().getCommandID("checkOverseerWinCondition"), localparams);
 			bool win = getRules().get_bool("overseer_win_condition");
@@ -694,6 +693,7 @@ void Reset(CRules@ this)
 void onRestart(CRules@ this)
 {
 	Reset(this);
+	getRules().set_bool("has_overseer", false);
 }
 void onInit(CRules@ this)
 {
