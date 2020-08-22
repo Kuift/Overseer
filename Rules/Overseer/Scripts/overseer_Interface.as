@@ -1,4 +1,4 @@
-#include "CTF_Structs.as";
+#include "overseer_Structs.as";
 
 /*
 void onTick( CRules@ this )
@@ -17,7 +17,7 @@ void onRestart( CRules@ this )
 {
     UIData ui;
 
-    CBlob@[] flags;
+    /*CBlob@[] flags;
     if(getBlobsByName("ctf_flag", flags))
     {
         for(int i = 0; i < flags.size(); i++)
@@ -32,7 +32,7 @@ void onRestart( CRules@ this )
 
         }
 
-    }
+    }*/
 
     this.set("uidata", @ui);
 

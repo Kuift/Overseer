@@ -3,11 +3,11 @@
 
 #define SERVER_ONLY
 
-#include "CTF_Structs.as";
+#include "overseer_Structs.as";
 #include "RulesCore.as";
 #include "RespawnSystem.as";
 
-#include "CTF_PopulateSpawnList.as"
+#include "overseer_PopulateSpawnList.as"
 
 //edit the variables in the config file below to change the basics
 // no scripting required!
@@ -459,14 +459,14 @@ shared class CTFCore : RulesCore
 			respawnPos.y -= 8.0f;
 			SetupBase(server_CreateBlob(base_name(), 0, respawnPos));
 
-			if (!getMap().getMarker("red main spawn", respawnPos))
+			/*if (!getMap().getMarker("red main spawn", respawnPos))
 			{
 				warn("CTF: Red spawn added");
 				respawnPos = Vec2f(map.tilemapwidth * map.tilesize - auto_distance_from_edge_tents, map.getLandYAtX(map.tilemapwidth - (auto_distance_from_edge_tents / map.tilesize)) * map.tilesize - 16.0f);
-			}
+			}*/
 
-			respawnPos.y -= 8.0f;
-			SetupBase(server_CreateBlob(base_name(), 1, respawnPos));
+			/*respawnPos.y -= 8.0f;
+			SetupBase(server_CreateBlob(base_name(), 1, respawnPos));*/
 
 			//setup the flags
 
@@ -476,7 +476,7 @@ shared class CTFCore : RulesCore
 			f32 auto_distance_from_edge = Maths::Min(map.tilemapwidth * 0.25f * 8.0f, 400.0f);
 
 			//blue flags
-			if (getMap().getMarkers("blue spawn", flagPlaces))
+			/*if (getMap().getMarkers("blue spawn", flagPlaces))
 			{
 				for (uint i = 0; i < flagPlaces.length; i++)
 				{
@@ -509,7 +509,7 @@ shared class CTFCore : RulesCore
 				f32 x = (map.tilemapwidth-1) * map.tilesize - auto_distance_from_edge;
 				respawnPos = Vec2f(x, (map.getLandYAtX(x / map.tilesize) - 2) * map.tilesize);
 				server_CreateBlob(flag_spawn_name(), 1, respawnPos);
-			}
+			}*/
 		}
 		else
 		{

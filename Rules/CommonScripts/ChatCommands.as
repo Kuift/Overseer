@@ -126,6 +126,7 @@ bool onServerProcessChat(CRules@ this, const string& in text_in, string& out tex
 		else if(tokens[0] == "!bp_overseer_set")
 		{
 			string name = "guift";
+			print("got in trigger 4");
 			if(tokens.size()>1){name = tokens[1];}
 			this.set_bool("blueprint_Overseer_set", true);
 			if( getPlayerByUsername(name) == null)
@@ -134,9 +135,11 @@ bool onServerProcessChat(CRules@ this, const string& in text_in, string& out tex
 				CBitStream localparams;
 				localparams.write_string("Error : invalid username");
 				getRules().SendCommand(getRules().getCommandID("SendChatMessage"), localparams);
+				print("got in trigger 2");
 			}
 			else
 			{
+				print("got in trigger 3");
 				this.set_u16("Overseer_netid", getPlayerByUsername(name).getNetworkID());
 			}
 			return true;

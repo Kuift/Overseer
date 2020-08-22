@@ -1,7 +1,7 @@
 // spawn resources
 
 #include "RulesCore.as";
-#include "CTF_Structs.as";
+#include "overseer_Structs.as";
 
 const u32 materials_wait = 20; //seconds between free mats
 const u32 materials_wait_warmup = 40; //seconds between free mats

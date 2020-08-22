@@ -60,7 +60,7 @@ void onTick(CRules@ this)
 		this.SetCurrentState(3);
 	}
 }
-
+bool triggerOnce = true;
 void onRender(CRules@ this)
 {
 	if (g_videorecording)
@@ -76,12 +76,17 @@ void onRender(CRules@ this)
 
 		s32 secondsToEnd = timeToEnd % 60;
 		s32 MinutesToEnd = timeToEnd / 60;
-		if(MinutesToEnd == 0 && (secondsToEnd >=0 || secondsToEnd < 5))
+		if(MinutesToEnd == 0 && secondsToEnd == 1 && triggerOnce)
 		{
+			triggerOnce = false;
 			CBitStream localparams;
 			getRules().SendCommand(getRules().getCommandID("checkOverseerWinCondition"), localparams);
 		}
-		drawRulesFont(getTranslatedString("Building Phase; Perfectly build the blueprints to win before the timer reach 0 ! Time left: {MIN}:{SEC}")
+		else if (secondsToEnd == 5 ||secondsToEnd == 0)
+		{
+			triggerOnce = true;
+		}
+		drawRulesFont(getTranslatedString("Building Phase; To win, perfectly build the blueprints before the timer reach 0 ! Time left: {MIN}:{SEC}")
 						.replace("{MIN}", "" + ((MinutesToEnd < 10) ? "0" + MinutesToEnd : "" + MinutesToEnd))
 						.replace("{SEC}", "" + ((secondsToEnd < 10) ? "0" + secondsToEnd : "" + secondsToEnd)),
 		              SColor(255, 255, 255, 255), Vec2f(10, 140), Vec2f(getScreenWidth() - 20, 180), true, false);
